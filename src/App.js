@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ClothesView from "./ClothesView";
+
 const App = () => {
     const { naver } = window;
     const WEATHER_API_KEY = "8e7520d1d2a6bd32ad7c1ad010c77aa1";
@@ -182,8 +184,12 @@ const App = () => {
             <h3>구름 : {weatherInfo.clouds}%</h3>
             <h3>습도 : {weatherInfo.humidity}%</h3>
             <h2>{weatherKorean(weatherInfo.desc)}</h2>
-
-            <div id="map" style={{ width: "100%", height: 500 }}></div>
+            <div style={{ display: "flex", width: "100%" }}>
+                <div id="map" style={{ width: "80%", height: 600 }}></div>
+                <div style={{ width: "20%" }}>
+                    <ClothesView temp={weatherInfo.temp} />
+                </div>
+            </div>
         </div>
     );
 };
