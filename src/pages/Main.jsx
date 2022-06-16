@@ -243,6 +243,8 @@ const Main = () => {
 
 const KakaoLoginBtn = styled.button`
     all: unset;
+    position: absolute;
+    right: 0;
     & > img:hover {
         cursor: pointer;
     }
